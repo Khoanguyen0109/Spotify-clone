@@ -11,9 +11,8 @@ function NowPlaying() {
       </div>
       <div className="now-playing__info">
         <a href="#">Song</a>
-  
-          <p  className="singer">Singer</p>
-        
+
+        <p className="singer">Singer</p>
       </div>
       <div className="now-playing__toggle">
         <div className="now-playing__toggle-like">
