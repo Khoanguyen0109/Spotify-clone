@@ -10,6 +10,7 @@ import Homepage from './pages/Homepage/Homepage'
 import Login from "./pages/Login/Login";
 import Playlist from "./pages/Playlist/Playlist";
 import Search from "./pages/Search/Search";
+import MusicControl from "./components/MusicControl/MusicControl";
 
 
 
@@ -32,9 +33,9 @@ function App() {
         </Switch>
        
       </div>
-      <div className='musicControl'>
-            Music Control
-      </div>
+      
+            <MusicControl/>
+      
     </div>
     </Router>
     
