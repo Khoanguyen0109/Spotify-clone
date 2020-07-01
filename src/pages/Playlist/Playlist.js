@@ -1,5 +1,6 @@
 import React from "react";
 import './playlist.scss'
+import Track from "../../components/Track/Track";
 function Playlist() {
   return (
     <div className="playlist">
@@ -30,10 +31,13 @@ function Playlist() {
       </div>
 
       <div className="playlist_tracks">
-          <div>
-
-          </div>
-          Playlist Track
+         
+         
+          <Track/>
+          <Track/>
+          <Track/>
+          <Track/>
+          <Track/>
       </div>
     </div>
   );

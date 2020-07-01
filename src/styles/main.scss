@@ -1,59 +1,24 @@
-.outerWrap{
-    background-color: grey;
-    height: 100vh;
-    width: 100%;
-    color: white;
+.outerWrap {
+  background-color: grey;
+  height: 100vh;
+  width: 100%;
+  color: white;
 }
 
-.App{
-    display: flex;
-    background-color: $mainColor;
-    height: calc(100vh - 90px);
+.App {
+  display: flex;
+  background-color: $mainColor;
+  height: calc(100vh - 90px);
 }
 
-.muisicControl{
-    background-color: rgb(170, 164, 164);
-    text-align: center;
-    height: 90px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-///NavBar
-.navbar{
-    flex-basis: 15%;
-    background-color: black;
-    
-}
-.nav{
-    margin-top: 20px;
-    
-    margin-right: 25px;
-    ul{
-        margin-top: 40px;
-        margin-left: -25px;
-        list-style-type: none;
-        li{ 
-            font-size: 1.5rem;
-            
-            margin-bottom: 25px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.3s ease-in-out;
-            &:active{
-                background-color: grey;
-                border-left: $greenColor;
-            }
+.musicControl {
+  background-color: #282828;
+  text-align: center;
+  font-size: 25px ;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-            &:hover{
-                background-color: rgb(149, 145, 145);
-                border-left: 5px green solid;
-            }
-        }
-    }
-}
-.logo{
-    padding: 1rem 1.5rem;
-    font-size: 4rem;
-
+  box-shadow: 5px 10px 8px #888888;
 }
