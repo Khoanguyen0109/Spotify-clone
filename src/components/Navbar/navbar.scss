@@ -1,0 +1,62 @@
+///NavBar
+.navbar {
+  flex-basis: 20%;
+  background-color: black;
+}
+.nav {
+  margin-top: 20px;
+
+  margin-right: 25px;
+  ul {
+    margin-top: 40px;
+    margin-left: -25px;
+    list-style-type: none;
+
+    button {
+      font-size: 1.2 rem;
+      font-weight: bold;
+      width: 72px;
+      padding: 5px;
+      text-transform: uppercase;
+      margin: 10px;
+      border-radius: 15px;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+      visibility: visible;
+
+      &:hover {
+        transform: scale(1.2, 1.2);
+      }
+    }
+    .btn-login {
+      background-color: $greenColor;
+    }
+    li {
+      font-size: 1.5rem;
+    color: rgb(187, 181, 181);
+      margin-bottom: 25px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      &:active {
+        background-color: grey;
+        border-left: $greenColor;
+      }
+
+      &:hover {
+        background-color: rgb(149, 145, 145);
+        border-left: 5px green solid;
+      }
+
+      &:active{
+        color: white;
+        background-color: rgb(149, 145, 145);
+      }
+    }
+  }
+}
+
+.logo {
+  padding: 1rem 1.5rem;
+  font-size: 4rem;
+}

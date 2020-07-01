@@ -1,4 +1,4 @@
-.playlist {
+.playlist__card {
   margin: 10px;
   height: 200px;
   max-width: 220px;
@@ -14,35 +14,40 @@
       position: absolute;
       height: 100%;
       width: 100%;
-      border-radius: 15px;
+      border-radius: 5px;
       object-fit: cover;
 
       &:hover {
         opacity: 0.6;
       }
     }
-    .img-hover {
-      width: 70px;
-      height: 70px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 1;
-      background: 0 0;
-      border: none;
-      opacity: 0;
+    
+  }
+  &__img-hover {
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    background: 0 0;
+    border: none;
+    opacity: 0;
 
-      &:hover {
-        opacity: 1;
-        transition: all 0.2s ease-in-out;
-      }
+    &:hover {
+      opacity: 1;
+      transition: all 0.2s ease-in-out;
     }
   }
   &__name {
     margin-bottom: 15px;
     text-align: center;
     font-size: 1.5rem;
+    cursor: pointer;
+    &:hover {
+      color: rgb(9, 255, 9);
+    }
   }
   &__info {
     text-align: center;

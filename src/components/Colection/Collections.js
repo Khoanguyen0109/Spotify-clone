@@ -1,5 +1,5 @@
 import React from 'react'
-import Playlist from '../Playlist/Playlist'
+import PlaylistCard from '../PlaylistCard/PlaylistCard'
 import './Collection.scss'
 function Collections() {
     return (
@@ -8,8 +8,8 @@ function Collections() {
                 Name Collection
             </div>
             <div className="collection-list">
-                <Playlist/>
-                <Playlist/>
+                <PlaylistCard/>
+                <PlaylistCard/>
             </div>
             
         </div>
