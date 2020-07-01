@@ -1,0 +1,12 @@
+.content{
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    &-collection{
+        display: flex;
+        flex-direction: column;
+        
+        margin-top: 25px;
+        margin-left: 25px;
+    }
+}

@@ -1,0 +1,13 @@
+.collection {
+  min-height: 30vh;
+  margin-bottom: 60px;
+  &-name {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: white;
+  }
+}
+.collection-list {
+  display: flex;
+    
+}
