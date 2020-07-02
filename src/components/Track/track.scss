@@ -70,9 +70,18 @@ $mainGreen:#1FBD58;
     &-info {
       display: flex;
       flex-direction: row;
+      
+      align-items: flex-end;
       p {
+        
         font-size: 15px;
-        margin-right: 15px;
+        margin-left: 20px;
+      }
+      .artist{
+        font-size: 17px;
+        margin-left: 0;
+        margin-right: 10px;
+        
       }
     }
   }

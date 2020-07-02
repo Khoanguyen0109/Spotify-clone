@@ -1,0 +1,22 @@
+.playlists{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+   
+    padding: 70px;
+    ;
+    h1{
+        font-size: 35px;
+        margin-bottom: 50px;
+    }
+
+    &__list{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+}

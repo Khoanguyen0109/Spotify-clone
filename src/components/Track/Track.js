@@ -1,7 +1,8 @@
 import React from 'react'
 import './track.scss'
-function Track() {
-    return (
+function Track(props) {
+    const {album, artists ,name,id ,duration_ms } = props.track
+    return ( 
         <div className='track'>
             <div className="icon">
             <i  className="fas fa-play"></i>
@@ -11,12 +12,14 @@ function Track() {
             </div>
             <div className="track__info">
                 <div  className="track__info-name" >
-                    Track Name
+                    {name}
 
                 </div>
                 <div  className="track__info-info" >
-                    <p>Singer</p>
-                    <p>Album</p>
+                    {artists.map(artist =>(
+                        <p className='artist'>{artist.name}</p>
+                    ))}
+                    <p>{album.album_type}: {album.name}</p>
 
                 </div>
             </div>
