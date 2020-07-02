@@ -9,6 +9,13 @@
   display: flex;
   background-color: $mainColor;
   height: calc(100vh - 90px);
+
+  .content{
+    flex-basis: 85%;
+  }
+  .navbar{
+    flex-basis: 15%;
+  }
 }
 
 

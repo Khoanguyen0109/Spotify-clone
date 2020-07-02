@@ -1,15 +1,21 @@
 import React from 'react'
 import PlaylistCard from '../PlaylistCard/PlaylistCard'
 import './Collection.scss'
-function Collections() {
+function Collections(props) {
+    const { id,description, image, name, tracks } = props.collection
+    // console.log('id :>> ', name);
+    
     return (
         <div className="collection">
             <div className="collection-name">
-                Name Collection
+                {name}
+            </div>
+            <div className="collection-des">
+                {description}
             </div>
             <div className="collection-list">
-                <PlaylistCard/>
-                <PlaylistCard/>
+
+
             </div>
             
         </div>

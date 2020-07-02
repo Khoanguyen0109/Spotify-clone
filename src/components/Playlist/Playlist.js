@@ -1,6 +1,6 @@
 import React from "react";
 import './playlist.scss'
-import Track from "../../components/Track/Track";
+import Track from "../Track/Track";
 function Playlist() {
   return (
     <div className="playlist">
