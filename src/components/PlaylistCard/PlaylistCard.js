@@ -12,14 +12,14 @@ function PlaylistCard(props) {
   return (
     <div className="playlist__card">
       <div className="playlist__card__img" onClick={handlePlay}>
-      <Link to="/playlist/:">
+      <Link to={`/playlists/${id}`} >
         <img
           src={images[0].url}
           alt="playlistimg"
         />
          </Link>
       </div>
-      <Link to="/playlist">
+      <Link to={`/playlists/${id}`} >
         <div className="playlist__card__name">{name}</div>
         </Link>
 

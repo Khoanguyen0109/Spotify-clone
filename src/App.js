@@ -9,11 +9,12 @@ import {
 import Navbar from "./components/Navbar/Navbar";
 import Homepage from "./pages/Homepage/Homepage";
 import Login from "./pages/Login/Login";
-import Playlist from "./components/Playlist/Playlist";
+
 import Search from "./pages/Search/Search";
 import MusicControl from "./components/MusicControl/MusicControl";
 import { token } from "./api";
 import Playlists from "./pages/Playlists/Playlists";
+import PlaylistDetail from "./components/Playlist/Playlist";
 
 function App() {
   return (
@@ -29,14 +30,14 @@ function App() {
               <Route exact path="/">
                 <Homepage />
               </Route>
-              <Route exact to='/playlists'>
+              <Route exact path="/playlists">
                 <Playlists/>
               </Route>
-              <Route exact path="/playlists/:playlistId">
-                <Playlist />
-              </Route>
-              <Route exact path="/search">
+              <Route  path="/search">
                 <Search />
+              </Route>
+              <Route exact  path="/playlists/:id" component={PlaylistDetail} >
+                
               </Route>
             </Switch>
           </div>

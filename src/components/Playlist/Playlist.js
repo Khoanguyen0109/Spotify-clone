@@ -1,43 +1,59 @@
-import React from "react";
-import './playlist.scss'
+import React, { useState, useEffect } from "react";
+import "./playlist.scss";
 import Track from "../Track/Track";
+import { useParams } from "react-router-dom";
+import { getPlaylist } from "../../api";
 function Playlist() {
+  const param = useParams();
+  const playlistId = param.id;
+  console.log("playlistId :>> ", playlistId);
+  useEffect(() => {
+    getData(playlistId);
+  }, []);
+  const [playlist, setPlaylist] = useState();
+
+  async function getData(playlistId) {
+    const { data } = await getPlaylist(playlistId);
+    setPlaylist(data);
+  }
+
+  console.log("playlist :>> ", playlist);
   return (
-    <div className="playlist">
-      <div className="playlist__des">
-        <div className="playlist__img">
-          <img
-            src="https://images.unsplash.com/photo-1593113372819-91bc58901720?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
-            alt=""
-          />
+    <div>
+      {playlist ? (
+        <div className="playlist">
+          <div className="playlist__des">
+            <div className="playlist__img">
+              <img src={playlist.images[0].url} alt="" />
+            </div>
+            <div className="playlist__info">
+              <div className="playlist__info__name">
+                {playlist.name}
+                <hr />
+              </div>
+              <div className="playlist__info__subject">
+                By {playlist.owner.display_name}
+              </div>
 
-        </div>
-        <div className="playlist__info">
-        <div className="playlist__info__name">
-                PlayList Name
+              <div className="playlist__info__detail">
+                {" "}
+                Tracks: {playlist.tracks.total}
+              </div>
+              <div className="playlist__info__buttons-play">
+                <a>Play on Spotify</a>
+              </div>
             </div>
-            <div className="playlist__info__subject">
-                Singer
-            </div>
-     
-            <div className="playlist__info__detail">
-                Detail
-            </div>
-            <div className="playlist__info__buttons-play">
-              <a>Play on Spotify</a>
-            </div>
-        </div>
-      </div>
+          </div>
 
-      <div className="playlist_tracks">
-         
-         
-          <Track/>
-          <Track/>
-          <Track/>
-          <Track/>
-          <Track/>
-      </div>
+          <div className="playlist_tracks">
+            {playlist.tracks.items.map(track => (
+              <Track track ={track.track}/>
+            ))}
+          </div>
+        </div>
+      ) : (
+        <p>Loading</p>
+      )}
     </div>
   );
 }

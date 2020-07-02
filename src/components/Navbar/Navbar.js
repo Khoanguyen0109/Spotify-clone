@@ -24,7 +24,8 @@ function Navbar() {
   
   useEffect(() => {
     getData();
-    history.push('/')
+    // history.push('/')
+    
 
   }, []);
   async function getData() {
