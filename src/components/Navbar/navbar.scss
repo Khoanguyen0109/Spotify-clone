@@ -1,17 +1,20 @@
 ///NavBar
 .navbar {
-  
   background-color: black;
+  overflow: scroll;
+}
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
 }
 .nav {
   margin-top: 20px;
-
   margin-right: 25px;
-  ul {
-    margin-top: 40px;
-    margin-left: -25px;
-    list-style-type: none;
 
+  &-login{
+    margin-top: 30px;
+    margin-left: -30px;
+    list-style-type: none;
     button {
       font-size: 1.2 rem;
       font-weight: bold;
@@ -31,27 +34,33 @@
     .btn-login {
       background-color: $greenColor;
     }
+  }
+  .nav-tools {
+    margin-top: 40px;
+    margin-left: -25px;
+    list-style-type: none;
+
     
-    li {
+    
+    a {
+      display: flex;
+      align-items: center;
       font-size: 1.5rem;
-    color: rgb(187, 181, 181);
+      color: rgb(187, 181, 181);
+      padding: 10px;
       margin-bottom: 25px;
       border-radius: 5px;
+      min-height: 3rem;
       cursor: pointer;
       transition: all 0.3s ease-in-out;
-      &:active {
-        background-color: grey;
-        border-left: $greenColor;
-      }
 
-      &:hover {
-        background-color: rgb(149, 145, 145);
-        border-left: 5px green solid;
-      }
 
-      &:active{
+      &:hover,
+      &:focus,
+      &.active {
         color: white;
-        background-color: rgb(149, 145, 145);
+        background-color: #181818;
+        border-left: 5px solid #1ED760;
       }
     }
   }
@@ -62,7 +71,7 @@
   font-size: 4rem;
 }
 
-.btn-logout{
+.btn-logout {
   background-color: transparent;
   color: white;
   border: 1px solid white;
@@ -82,20 +91,19 @@
 }
 
 .user__info {
-
-  &-avatar{
+  &-avatar {
     width: 100px;
     height: 100px;
     margin-top: 25px;
     margin-left: 40px;
-    
+
     img {
       width: 100%;
       height: 100%;
       border-radius: 100%;
     }
   }
-  &-name{
+  &-name {
     margin-top: 10px;
     font-size: 15px;
     font-weight: 700;

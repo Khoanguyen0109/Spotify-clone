@@ -2,13 +2,15 @@ import React, { useState, useEffect } from "react";
 import Collections from "../../components/Colection/Collections";
 import "./homepage.scss";
 import { getCollection, getcollections, token } from "../../api";
+import { useHistory } from "react-router-dom";
 
 function Homepage(props) {
   console.log("props :>> ", props);
     const [collections, setCollections] = useState()
-
+  let history = useHistory()
   useEffect(() => {
     getData();
+     history.push('/')
 
   }, []);
   async function getData() {
