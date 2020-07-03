@@ -12,10 +12,15 @@
 
   .content{
     flex-basis: 85%;
+    height: 100%;
+    overflow-y: scroll;
   }
   .navbar{
     flex-basis: 15%;
   }
 }
-
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
 

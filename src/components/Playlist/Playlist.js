@@ -6,7 +6,7 @@ import { getPlaylist } from "../../api";
 function Playlist() {
   const param = useParams();
   const playlistId = param.id;
-  console.log("playlistId :>> ", playlistId);
+ 
   useEffect(() => {
     getData(playlistId);
   }, []);
@@ -14,10 +14,11 @@ function Playlist() {
 
   async function getData(playlistId) {
     const { data } = await getPlaylist(playlistId);
+
     setPlaylist(data);
   }
 
-  console.log("playlist :>> ", playlist);
+  console.log('playlist :>> ', playlist);
   return (
     <div>
       {playlist ? (
@@ -46,9 +47,9 @@ function Playlist() {
           </div>
 
           <div className="playlist__tracks">
-            {playlist.tracks.items.map(track => (
+            { playlist ? playlist.tracks.items.map(track => (
               <Track track ={track.track}/>
-            ))}
+            )): <p>Loading...</p>}
           </div>
         </div>
       ) : (
