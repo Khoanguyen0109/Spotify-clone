@@ -76,6 +76,10 @@ $mainGreen:#1FBD58;
         
         font-size: 15px;
         margin-left: 20px;
+        cursor: pointer;
+        &:hover{
+          text-decoration: underline;
+        }
       }
       .artist{
         font-size: 17px;

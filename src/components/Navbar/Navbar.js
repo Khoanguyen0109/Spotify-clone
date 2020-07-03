@@ -10,9 +10,12 @@ import {
   logout,
 } from "../../api";
 
+const isActive = ({ isCurrent }) => (isCurrent ? { className: 'active' } : null);
+
+const NavLink = props => <Link getProps={isActive} {...props} />;
 function Navbar() {
   const LOGIN_URI = "http://localhost:8888/login";
-  let history = useHistory()
+ 
 
   const [state, setState] = useState({
     user: null,
@@ -21,12 +24,10 @@ function Navbar() {
     topArtists: null,
     topTracks: null,
   });
-  
+
   useEffect(() => {
     getData();
-    // history.push('/')
-    
-
+   
   }, []);
   async function getData() {
     const {
@@ -52,38 +53,41 @@ function Navbar() {
                 <div className="user__info-name">{state.user.display_name}</div>
               </div>
             ) : (
-              <i class="fas fa-user"></i>
+              <i class="fas fa-use\r"></i>
             )}{" "}
-            
             <div className="btn-logout" onClick={logout}>
               {" "}
-             
               Log Out
             </div>
-            
-           
           </div>
         ) : (
-          <ul>
+          <ul  className='nav-login'>
             <a href={LOGIN_URI}>
               <button className="btn-login">Login</button>
             </a>
+            <a href="">
             <button className="btn-signup">Sing up</button>
+            </a>
+            
           </ul>
         )}
 
-        <ul>
-          <Link to="/">
+        <ul className='nav-tools'>
+          <NavLink to="/">
             <li>Home</li>
-          </Link>
+          </NavLink>
           {/* <Link to="/search">
             <li>Search</li>
           </Link> */}
-          <Link to ='/playlists'>
+          <NavLink to="/playlists">
             <li>Your Playlist</li>
-          </Link>
-          <li>Top Artists</li>
+          </NavLink>
+          <NavLink to="/topartists">
+            <li>Top Artists</li>
+            </NavLink>
+          <NavLink to="/toptracks">
           <li>Top Tracks</li>
+          </NavLink>
         </ul>
       </div>
     </div>
