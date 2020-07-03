@@ -3,7 +3,7 @@ import "./track.scss";
 import { formatDuration } from "../../utils";
 import { Link } from "react-router-dom";
 function Track(props) {
-  const { album, artists, name, id, duration_ms } = props.track;
+  const { album, artists,  name, id, duration_ms } = props.track;
   return (
     <div className="track">
       <div className="icon">
@@ -11,7 +11,11 @@ function Track(props) {
         <i className="fas fa-music"></i>
         <i className="fas fa-pause"></i>
       </div>
+      <div className="track__img">
+                <img src={album.images[2].url} alt="TrackImg"/>
+          </div>
       <div className="track__info">
+      
         <div className="track__info-name">{name}</div>
         <div className="track__info-info">
           {artists.map((artist) => (

@@ -82,11 +82,11 @@ function Navbar() {
           <NavLink to="/playlists">
             <li>Your Playlist</li>
           </NavLink>
-          <NavLink to="/topartists">
-            <li>Top Artists</li>
+          <NavLink to="/top-artists">
+            <li>Artists</li>
             </NavLink>
-          <NavLink to="/toptracks">
-          <li>Top Tracks</li>
+          <NavLink to="/top-tracks">
+          <li>Tracks</li>
           </NavLink>
         </ul>
       </div>

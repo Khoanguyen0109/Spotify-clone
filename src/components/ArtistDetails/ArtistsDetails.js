@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getArtist, getArtistTopTrack } from "../../../api";
-import Track from "../../Track/Track";
+import { getArtist, getArtistTopTrack } from "../../api";
+import Track from "../Track/Track";
 
 function ArtistsDetails() {
   const param = useParams();

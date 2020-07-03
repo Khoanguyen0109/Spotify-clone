@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import ArtistArtwork from './ArtistArtwork/ArtistArtwork'
+import ArtistArtwork from '../..//components/ArtistArtwork/ArtistArtwork'
 import { getTopArtistsMedium } from '../../api'
 import './topartists.scss'
 function TopArtists() {

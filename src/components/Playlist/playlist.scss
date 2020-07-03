@@ -26,6 +26,9 @@
     }
   }
 
+  &__tracks{
+    margin-left: 30px;
+  }
   &__info {
     display: flex;
     flex-direction: column;
@@ -69,6 +72,8 @@
         transform: scale(1.1,1.1);
       }
     }
+
+
   }
 
 

@@ -45,7 +45,7 @@ function Playlist() {
             </div>
           </div>
 
-          <div className="playlist_tracks">
+          <div className="playlist__tracks">
             {playlist.tracks.items.map(track => (
               <Track track ={track.track}/>
             ))}
