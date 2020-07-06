@@ -76,6 +76,9 @@ const headers = {
   Authorization: `Bearer ${token}`,
   "Content-Type": "application/json",
 };
+export const search  = (searchText) =>
+  axios.get(`https://api.spotify.com/v1/search?q=${searchText}&type=track%2Cartist&limit=20&offset=0`, { headers });
+
 
 export const getUser = () =>
   axios.get("https://api.spotify.com/v1/me", { headers });
@@ -87,16 +90,16 @@ export const getRecentlyPlayed = () =>
   axios.get("https://api.spotify.com/v1/me/player/recently-played", {
     headers,
   });
-export const getCollection = () =>
+export const getFeaturePlaylist = () =>
   axios.get(
-    "https://api.spotify.com/v1/browse/featured-playlists?limit=10&offset=0",
+    "https://api.spotify.com/v1/browse/featured-playlists?limit=5&offset=0",
     {
       headers,
     }
   );
 
 export const getCategories = () =>
-  axios.get("https://api.spotify.com/v1/browse/categories?limit=10&offset=0", {
+  axios.get("https://api.spotify.com/v1/browse/categories?country=VN&limit=20&offset=0", {
     headers,
   });
 

@@ -3,15 +3,12 @@
   background-color: black;
   overflow: scroll;
 }
-::-webkit-scrollbar {
-  width: 0px;
-  background: transparent;
-}
+
 .nav {
   margin-top: 20px;
   margin-right: 25px;
 
-  &-login{
+  &-login {
     margin-top: 30px;
     margin-left: -30px;
     list-style-type: none;
@@ -40,8 +37,6 @@
     margin-left: -25px;
     list-style-type: none;
 
-    
-    
     a {
       display: flex;
       align-items: center;
@@ -54,13 +49,11 @@
       cursor: pointer;
       transition: all 0.3s ease-in-out;
 
-
       &:hover,
       &:focus,
       &.active {
         color: white;
         background-color: #181818;
-        border-left: 5px solid #1ED760;
       }
     }
   }
@@ -108,5 +101,85 @@
     font-size: 15px;
     font-weight: 700;
     text-align: center;
+  }
+}
+@media screen and (min-width: 1201px) {
+  .nav-tools {
+    a {
+      &:hover,
+      &:focus,
+      &.active {
+        color: white;
+        background-color: #181818;
+        border-left: 5px solid #1ed760;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .nav {
+    margin-top: 0;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+
+    height: 90px;
+    width: 100%;
+    .user {
+      position: absolute;
+      display: flex;
+      right: 2%;
+      &__info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 20px;
+        &-avatar {
+          width: 50px;
+          height: 50px;
+        }
+        &-name {
+          display: none;
+          text-align: center;
+          margin-left: 5px;
+        }
+      }
+    }
+
+    &-tools {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      a {
+        &:hover,
+        &:focus,
+        &.active {
+          border-bottom: 5px solid #1ed760;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .nav {
+    .logo {
+      font-size: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .user {
+      &__info {
+        img {
+          margin-bottom: 15px;
+        }
+      }
+    }
+    .btn-logout {
+      display: none;
+    }
   }
 }

@@ -1,0 +1,38 @@
+.search__details {
+  position: relative;
+  top: 25%;
+  padding-left: 25px;
+
+  h1{
+    font-size: 30px;
+  }
+  // padding-right: 50px;
+  display: flex;
+  flex-direction: column;
+
+  &__artists {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    margin: auto;
+    margin-bottom: 50px;
+    text-align: center;
+    button {
+      width: 100px;
+      height: 40px;
+
+      border-radius: 15px;
+
+      border-radius: 15px;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.1, 1.1);
+      }
+    }
+  }
+}
