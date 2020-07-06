@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getArtist, getArtistTopTrack } from "../../api";
 import Track from "../Track/Track";
+import Loader from "../Loader/Loader";
 
 function ArtistsDetails() {
   const param = useParams();
@@ -18,7 +19,7 @@ function ArtistsDetails() {
     getArtistData(artistId);
     getArtistTopTracksData(artistId);
   }, [artistId]);
-  
+
   async function getArtistData(artistId) {
     const { data } = await getArtist(artistId);
     setArtist({
@@ -30,12 +31,11 @@ function ArtistsDetails() {
   }
 
   async function getArtistTopTracksData(artistId) {
-      const {data} = await getArtistTopTrack (artistId)
-      setTracks(data.tracks)
+    const { data } = await getArtistTopTrack(artistId);
+    setTracks(data.tracks);
   }
-  
 
-  console.log('tracks :>> ', tracks);
+ 
   return (
     <div>
       {artist ? (
@@ -46,23 +46,25 @@ function ArtistsDetails() {
             </div>
             <div className="artist_details_info__info">
               <h1>{artist.name}</h1>
-              <h2>{artist.followers}</h2>
+              <h2> Followers : {artist.followers}</h2>
+              <h2>Genre:</h2>
               <ul>
                 {artist.genres.map((genre) => (
-                  <li>{genre}</li>
+                  <li> {genre}</li>
                 ))}
               </ul>
             </div>
           </div>
           <div className="artist_details_top_tracks">
-                {tracks? tracks.map(track => (
-                    <Track track={track}/>
-                )) : <p>Loading..</p>}
-
+            {tracks ? (
+              tracks.map((track) => <Track track={track} />)
+            ) : (
+              <Loader />
+            )}
           </div>
         </div>
       ) : (
-        <p>Loading..</p>
+        <Loader/>
       )}
     </div>
   );

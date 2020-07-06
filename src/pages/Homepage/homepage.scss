@@ -1,16 +1,15 @@
 .homepage {
   width: 100%;
   height: 100%;
-//   overflow-y: scroll;
 
   .bar {
     position: relative;
-    top: 0%;
+    top: 5%;
     .searchBox {
       position: absolute;
       top: -5%;
       left: 5%;
-      transform: translate(0, 100%);
+      // transform: translate(0, 100%);
       background: #2f3640;
       height: 50px;
       border-radius: 40px;
@@ -50,7 +49,7 @@
       font-size: 16px;
       transition: 0.4s;
       line-height: 40px;
-      width: 0px;
+      width: 250px;
     }
 
     @media screen and (max-width: 620px) {
@@ -70,65 +69,57 @@
     display: flex;
     flex-direction: column;
 
+    .featured-playlist {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 30px;
 
-    .featured-playlist{
+      &__list {
         display: flex;
-        flex-direction: column;
-        margin-bottom: 30px;
-            
-        &__list{
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;;
-            overflow-x: auto;
-            &-card{
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                padding: 20px 20px 16px;
-                margin: 15px;
-                border-radius: 8px;
-                width: 175px;
-                height: 250px;
-                background-color: #252525;
-                box-shadow: 1px 2px rgb(54, 54, 54);
-                
-                
-                &_img{
-                    flex-basis: 50%;
-                 
-                    width: 130px;
-                    height: 130px;
-                    img{
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
-                        
-                        
-                    }
-                }
-                &_info{
-                    width: 100%;
-                    height: 50%;
-                    h2{ 
-                        font-size: 15px;
-                        padding-top: 20px;
-                       min-height: 50%;
-                    }
-                    
-                    h5{
-                        
-                        font-size: 10px;
-                        margin-top: 10px;
-                        color: rgb(139, 136, 136);
-                    }
-                }
-        
+        flex-direction: row;
+        flex-wrap: wrap;
+        overflow-x: auto;
+        &-card {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 20px 20px 16px;
+          margin: 15px;
+          border-radius: 8px;
+          width: 175px;
+          height: 250px;
+          background-color: #252525;
+          box-shadow: 1px 2px rgb(54, 54, 54);
+
+          &_img {
+            flex-basis: 50%;
+
+            width: 130px;
+            height: 130px;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
             }
+          }
+          &_info {
+            width: 100%;
+            height: 50%;
+            h2 {
+              font-size: 15px;
+              padding-top: 20px;
+              min-height: 50%;
+            }
+
+            h5 {
+              font-size: 10px;
+              margin-top: 10px;
+              color: rgb(139, 136, 136);
+            }
+          }
         }
-
-
+      }
     }
 
     .categories {
@@ -150,14 +141,11 @@
       border: 1px solid white;
       border-radius: 15px;
       padding: 15px;
-
     }
 
     h1 {
-      font-size: 25px;
+      font-size: 20px;
       margin-bottom: 20px;
     }
-
-
   }
 }

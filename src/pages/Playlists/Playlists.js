@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import PlaylistCard from '../../components/PlaylistCard/PlaylistCard'
 import './playlists.scss'
 import { getPlaylists } from '../../api'
+import Loader from '../../components/Loader/Loader'
 function Playlists() {
 
     const [playlists, setPlaylists] = useState()
@@ -13,7 +14,7 @@ function Playlists() {
         const {data} = await getPlaylists()
         setPlaylists(data)
     }
-    console.log('playlists :>> ', playlists);
+  
     return (
         <div className='playlists'>
             <h1>Your Playlist</h1>
@@ -26,7 +27,8 @@ function Playlists() {
                 </PlaylistCard>
           ))
         ) : (
-          <p>Loading ..</p>
+          
+            <Loader/> 
         )}
 
             </div>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getTopTracksMedium } from "../../api";
 import Track from "../../components/Track/Track";
 import './toptrack.scss'
+import Loader from "../../components/Loader/Loader";
 function TopTracks() {
     const [tracks, setTracks] = useState()
 
@@ -21,7 +22,7 @@ function TopTracks() {
       <div className="top_tracks__list">
             {tracks ? tracks.map(track =>(
                 <Track track ={track}/>
-            )): <p>Loading ...</p>  } 
+            )): <Loader/>  } 
       </div>
     </div>
   );

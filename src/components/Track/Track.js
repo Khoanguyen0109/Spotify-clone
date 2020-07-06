@@ -2,6 +2,7 @@ import React from "react";
 import "./track.scss";
 import { formatDuration } from "../../utils";
 import { Link } from "react-router-dom";
+import Loader from "../Loader/Loader";
 function Track(props) {
   // const { album, artists,  name, id, duration_ms } = props.track;
   const track = props.track
@@ -34,7 +35,7 @@ function Track(props) {
       <div className="track__time">
         <div>{formatDuration(track.duration_ms)}</div>
       </div>
-    </div>: <p>Loading..</p>}
+    </div>: <Loader/>}
     </div>
    
   );

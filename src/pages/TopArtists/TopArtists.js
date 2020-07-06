@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import ArtistArtwork from '../..//components/ArtistArtwork/ArtistArtwork'
 import { getTopArtistsMedium } from '../../api'
 import './topartists.scss'
+import Loader from '../../components/Loader/Loader'
 function TopArtists() {
 
     const [topArtists, setTopArtists] = useState('')
@@ -26,7 +27,7 @@ function TopArtists() {
                     topArtists ? 
                     topArtists.items.map(artist =>(
                         <ArtistArtwork artist={artist}/>
-                    )): <p>Loading .. </p>
+                    )): <Loader/>
                 }
             </div>
             

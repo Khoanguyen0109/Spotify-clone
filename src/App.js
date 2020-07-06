@@ -10,14 +10,23 @@ import Navbar from "./components/Navbar/Navbar";
 import Homepage from "./pages/Homepage/Homepage";
 import Login from "./pages/Login/Login";
 
-import Search from "./pages/Search/Search";
+
 import MusicControl from "./components/MusicControl/MusicControl";
-import { token } from "./api";
+import { logout, getUser } from "./api";
 import Playlists from "./pages/Playlists/Playlists";
 import PlaylistDetail from "./components/Playlist/Playlist";
 import TopArtists from "./pages/TopArtists/TopArtists";
 import ArtistsDetails from "./components/ArtistDetails/ArtistsDetails";
 import TopTracks from "./pages/Toptracks/TopTracks";
+
+const accessToken = localStorage.spotify_access_token;
+const timestamp = localStorage.spotify_token_timestamp;
+
+if (accessToken) {
+  if (timestamp * 1000 < Date.now()) {
+    logout();
+  }
+}
 
 function App() {
   return (
@@ -34,22 +43,19 @@ function App() {
                 <Homepage />
               </Route>
               <Route exact path="/playlists">
-                <Playlists/>
+                <Playlists />
               </Route>
-              <Route  path="/search">
-                <Search />
+              <Route exact path="/playlists/:id">
+                <PlaylistDetail />
               </Route>
-              <Route exact  path="/playlists/:id"  >
-                <PlaylistDetail/>
+              <Route exact path="/top-artists">
+                <TopArtists />
               </Route>
-              <Route exact path ='/top-artists' >
-                <TopArtists/>
+              <Route exact path="/top-artists/:artistId">
+                <ArtistsDetails />
               </Route>
-              <Route exact path ='/top-artists/:artistId' >
-                <ArtistsDetails/>
-              </Route>
-              <Route exact path ='/top-tracks' >
-                <TopTracks/>
+              <Route exact path="/top-tracks">
+                <TopTracks />
               </Route>
             </Switch>
           </div>

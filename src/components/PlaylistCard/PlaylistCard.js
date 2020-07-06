@@ -3,12 +3,12 @@ import "./playlistcard.scss";
 import { useHistory, Link } from "react-router-dom";
 function PlaylistCard(props) {
   const { id, description, images, name, tracks } = props.playlist;
-  console.log("id :>> ", id);
+ 
 
   const handlePlay = () => {
     alert("Play");
   };
-
+ console.log('props :>> ', props);
   return (
     <div className="playlist__card">
       <div className="playlist__card__img" onClick={handlePlay}>

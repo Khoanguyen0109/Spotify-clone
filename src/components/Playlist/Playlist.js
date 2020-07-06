@@ -3,6 +3,7 @@ import "./playlist.scss";
 import Track from "../Track/Track";
 import { useParams } from "react-router-dom";
 import { getPlaylist } from "../../api";
+import Loader from "../Loader/Loader";
 function Playlist() {
   const param = useParams();
   const playlistId = param.id;
@@ -49,11 +50,11 @@ function Playlist() {
           <div className="playlist__tracks">
             { playlist ? playlist.tracks.items.map(track => (
               <Track track ={track.track}/>
-            )): <p>Loading...</p>}
+            )): <Loader/>}
           </div>
         </div>
       ) : (
-        <p>Loading</p>
+        <Loader/>
       )}
     </div>
   );

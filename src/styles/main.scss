@@ -24,3 +24,27 @@
   background: transparent;
 }
 
+@media screen and (max-width: 1200px) {
+  .App {
+    display: flex;
+    flex-direction: column;
+
+    .navbar{
+      flex-basis: 20%;
+
+    }
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .App {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .navbar{
+      flex-basis: 15%;
+      justify-content: center;
+
+    }
+  }
+}

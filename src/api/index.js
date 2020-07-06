@@ -76,6 +76,9 @@ const headers = {
   Authorization: `Bearer ${token}`,
   "Content-Type": "application/json",
 };
+export const search  = (searchText) =>
+  axios.get(`https://api.spotify.com/v1/search?q=${searchText}&type=track%2Cartist&limit=20&offset=0`, { headers });
+
 
 export const getUser = () =>
   axios.get("https://api.spotify.com/v1/me", { headers });
