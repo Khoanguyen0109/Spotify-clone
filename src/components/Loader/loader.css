@@ -1,0 +1,72 @@
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 90vh;
+}
+
+.container .bars {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  overflow: hidden;
+  width: 100px;
+  min-width: 100px;
+  height: 50px;
+  margin: 0 auto;
+  z-index: 2;
+  position: relative;
+  left: 0;
+  right: 0;
+}
+
+.container .bars .bar {
+  width: 10px;
+  height: 5px;
+  margin: 0 2px;
+  background-color: grey;
+  -webkit-animation-name: dance;
+          animation-name: dance;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes dance {
+  from {
+    height: 10px;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+@keyframes dance {
+  from {
+    height: 10px;
+  }
+  to {
+    height: 100%;
+  }
+}
+/*# sourceMappingURL=loader.css.map */

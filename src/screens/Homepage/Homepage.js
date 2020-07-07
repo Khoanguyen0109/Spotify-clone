@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import "./homepage.scss";
+
 
 import { useHistory, Link } from "react-router-dom";
 import { getCategories, getFeaturePlaylist, search, getUser } from "../../api";
@@ -13,6 +13,11 @@ function Homepage(props) {
   const [searchText, setSearchText] = useState("");
 
   const [dataSearch, setDataSearch] = useState();
+  // const [morePlaylist, setMorePlaylist] = useState(false);
+
+  // const handleMorePlaylist = () => {
+  //   setMorePlaylist(!morePlaylist);
+  // };
 
   let history = useHistory();
 
@@ -64,9 +69,7 @@ function Homepage(props) {
       </div>
 
       {dataSearch ? (
-        
-          <Search data={dataSearch} />
-        
+        <Search data={dataSearch} />
       ) : (
         <div className="homepage__details">
           <div className="featured-playlist">
@@ -90,7 +93,7 @@ function Homepage(props) {
                   </div>
                 ))
               ) : (
-                <Loader/>
+                <Loader />
               )}
             </div>
           </div>

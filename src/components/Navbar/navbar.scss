@@ -1,4 +1,5 @@
 ///NavBar
+// @import '../../styles/_variables';
 .navbar {
   background-color: black;
   overflow: scroll;
@@ -47,13 +48,13 @@
       border-radius: 5px;
       min-height: 3rem;
       cursor: pointer;
-      transition: all 0.3s ease-in-out;
+      transition: all 0.2s ease-in-out;
 
       &:hover,
       &:focus,
       &.active {
         color: white;
-        background-color: #181818;
+        background-color: $btnColor;
       }
     }
   }
@@ -61,7 +62,16 @@
 
 .logo {
   padding: 1rem 1.5rem;
-  font-size: 4rem;
+  font-size: 3rem;
+  cursor: pointer;
+  i {
+    color: $greenColor;
+  }
+  span {
+    color: white;
+    margin-left: 5px;
+    font-size: 2.5rem;
+  }
 }
 
 .btn-logout {
@@ -69,8 +79,9 @@
   color: white;
   border: 1px solid white;
   border-radius: 30px;
-  margin-top: 30px;
-  padding: 12px 30px;
+  margin: 15px auto;
+  width: 120px;
+  padding: 12px 20px;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 1px;
@@ -84,11 +95,14 @@
 }
 
 .user__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
   &-avatar {
-    width: 100px;
-    height: 100px;
-    margin-top: 25px;
-    margin-left: 40px;
+    width: 80px;
+    height: 80px;
 
     img {
       width: 100%;
@@ -103,25 +117,76 @@
     text-align: center;
   }
 }
-@media screen and (min-width: 1201px) {
-  .nav-tools {
-    a {
-      &:hover,
-      &:focus,
-      &.active {
-        color: white;
-        background-color: #181818;
-        border-left: 5px solid #1ed760;
+
+
+
+@media (max-width: 575.98px) { 
+  .nav {
+    font-size: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    position: relative;
+    .logo{
+
+      span{
+        display: none;
       }
     }
-  }
-}
 
-@media screen and (max-width: 1200px) {
+    .user {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 15%;
+      right: 2%;
+      &__info {
+        margin-right: 20px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &-avatar {
+          width: 50px;
+          height: 50px;
+        }
+        &-name {
+          display: none;
+          text-align: center;
+          margin-left: 5px;
+        }
+      }
+
+    }
+
+    &-tools {
+      // display: flex;
+      // justify-content: center;
+      // align-items: center;
+      display: none;
+    }
+    .btn-logout{
+      display: none;
+    }
+  }
+    
+ }
+
+// Small devices (landscape phones, 576px and up)
+// @media (min-width: 576px) and (max-width: 767.98px) { 
+ 
+//  }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) { 
   .nav {
     margin-top: 0;
     display: flex;
     flex-direction: row;
+    align-items: center;
     position: relative;
 
     height: 90px;
@@ -129,12 +194,17 @@
     .user {
       position: absolute;
       display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 15%;
       right: 2%;
       &__info {
+        margin-right: 20px;
+        margin-bottom: 10px;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-right: 20px;
+
         &-avatar {
           width: 50px;
           height: 50px;
@@ -151,35 +221,14 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      a {
-        &:hover,
-        &:focus,
-        &.active {
-          border-bottom: 5px solid #1ed760;
-        }
-      }
     }
   }
-}
+ }
 
-@media screen and (max-width: 740px) {
-  .nav {
-    .logo {
-      font-size: 25px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+// Large devices (desktops, 992px and up)
 
-    .user {
-      &__info {
-        img {
-          margin-bottom: 15px;
-        }
-      }
-    }
-    .btn-logout {
-      display: none;
-    }
-  }
-}
+
+// Extra large devices (large desktops, 1200px and up)
+
+
+

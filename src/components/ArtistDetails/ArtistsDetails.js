@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { getArtist, getArtistTopTrack } from "../../api";
 import Track from "../Track/Track";
 import Loader from "../Loader/Loader";
-
+import './artistsdetails.scss'
 function ArtistsDetails() {
   const param = useParams();
   const artistId = param.artistId;

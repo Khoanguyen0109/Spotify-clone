@@ -40,7 +40,8 @@ function Navbar() {
   }
   return (
     <div className="nav">
-      <div className="logo">Spotify</div>
+      <div className="logo"> <Link to='/'><i class="fab fa-spotify"> <span> Spotify</span></i></Link>
+      </div>
       {token ? (
         <div className="user">
           {state.user ? (

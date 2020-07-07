@@ -7,17 +7,17 @@ import {
   useHistory,
 } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
-import Homepage from "./pages/Homepage/Homepage";
-import Login from "./pages/Login/Login";
+import Homepage from "./screens/Homepage/Homepage";
+import Login from "./screens/Login/Login";
 
 
 import MusicControl from "./components/MusicControl/MusicControl";
-import { logout, getUser } from "./api";
-import Playlists from "./pages/Playlists/Playlists";
-import PlaylistDetail from "./components/Playlist/Playlist";
-import TopArtists from "./pages/TopArtists/TopArtists";
+import { logout } from "./api";
+import Playlists from "./screens/Playlists/Playlists";
+import PlaylistDetail from "./components/PlaylistDetails/Playlist";
+import TopArtists from "./screens/TopArtists/TopArtists";
 import ArtistsDetails from "./components/ArtistDetails/ArtistsDetails";
-import TopTracks from "./pages/Toptracks/TopTracks";
+import TopTracks from "./screens/Toptracks/TopTracks";
 
 const accessToken = localStorage.spotify_access_token;
 const timestamp = localStorage.spotify_token_timestamp;
@@ -60,8 +60,10 @@ function App() {
             </Switch>
           </div>
         </div>
-
+        <div className="music-control">
         <MusicControl />
+        </div>
+        
       </div>
     </Router>
   );

@@ -1,0 +1,101 @@
+.playlist {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: #121212;
+  overflow-y: scroll;
+}
+
+.playlist__des {
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #1c191d;
+}
+
+.playlist__img {
+  -ms-flex-preferred-size: 15%;
+      flex-basis: 15%;
+  width: 200px;
+  height: 200px;
+  margin: 40px 15px 40px 35px;
+  position: relative;
+}
+
+.playlist__img img {
+  width: 200px;
+  height: 200px;
+  border-radius: 5px;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+.playlist__tracks {
+  margin-left: 30px;
+}
+
+.playlist__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 40px 15px 40px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.playlist__info__name {
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.playlist__info__subject {
+  font-size: 1.1rem;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.playlist__info__detail {
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+
+.playlist__info__buttons-play {
+  background-color: #1db954;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 25px;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 50px;
+  padding: 11px 24px;
+  margin: 20px 0px;
+  -webkit-transition: all 0.3s cubic-bezier(0.3, 0, 0.4, 1) 0s;
+  transition: all 0.3s cubic-bezier(0.3, 0, 0.4, 1) 0s;
+}
+
+.playlist__info__buttons-play:hover {
+  background-color: #41cf73;
+  -webkit-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1);
+}
+/*# sourceMappingURL=playlist.css.map */
