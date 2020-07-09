@@ -13,7 +13,7 @@ function TopTracks() {
         const {data} = await getTopTracksMedium()
         setTracks(data.items)
     }
-    console.log('tracks :>> ', tracks);
+
   return (
     <div className="top_tracks">
       <div className="top_tracks__bar">

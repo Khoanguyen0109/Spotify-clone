@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,WAAW,CAAC;EACV,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,YAAY,EAAE,IAAI;EAClB,WAAW,EAAE,IAAI;CAMlB;;AAJE,AAAD,gBAAM,CAAC;EACL,aAAa,EAAE,IAAI;EACnB,SAAS,EAAE,IAAI;CAChB",
-    "sources": [
-        "toptrack.scss"
-    ],
-    "names": [],
-    "file": "toptrack.css"
-}

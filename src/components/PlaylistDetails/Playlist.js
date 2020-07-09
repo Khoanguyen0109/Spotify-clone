@@ -7,11 +7,11 @@ import Loader from "../Loader/Loader";
 function Playlist() {
   const param = useParams();
   const playlistId = param.id;
- 
+  const [playlist, setPlaylist] = useState();
   useEffect(() => {
     getData(playlistId);
   }, []);
-  const [playlist, setPlaylist] = useState();
+ 
 
   async function getData(playlistId) {
     const { data } = await getPlaylist(playlistId);
@@ -19,7 +19,7 @@ function Playlist() {
     setPlaylist(data);
   }
 
-  console.log('playlist :>> ', playlist);
+  console.log("playlist :>> ", playlist);
   return (
     <div>
       {playlist ? (
@@ -41,20 +41,26 @@ function Playlist() {
                 {" "}
                 Tracks: {playlist.tracks.total}
               </div>
-              <div className="playlist__info__buttons-play">
-                <a>Play on Spotify</a>
-              </div>
+              <a href={playlist.external_urls.spotify} target="_blank">
+                <div className="playlist__info__buttons-play">
+                  <a>Play on Spotify</a>
+                </div>
+              </a>
             </div>
           </div>
 
           <div className="playlist__tracks">
-            { playlist ? playlist.tracks.items.map(track => (
-              <Track track ={track.track}/>
-            )): <Loader/>}
+            {playlist ? (
+              playlist.tracks.items.map((track) => (
+                <Track track={track.track} />
+              ))
+            ) : (
+              <Loader />
+            )}
           </div>
         </div>
       ) : (
-        <Loader/>
+        <Loader />
       )}
     </div>
   );

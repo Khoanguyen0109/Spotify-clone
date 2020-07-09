@@ -76,10 +76,18 @@ const headers = {
   Authorization: `Bearer ${token}`,
   "Content-Type": "application/json",
 };
-export const search  = (searchText) =>
-  axios.get(`https://api.spotify.com/v1/search?q=${searchText}&type=track%2Cartist&limit=20&offset=0`, { headers });
+export const search = (searchText) =>
+  axios.get(
+    `https://api.spotify.com/v1/search?q=${searchText}&type=track%2Cartist&limit=20&offset=0`,
+    { headers }
+  );
+export const play = () =>
+  axios.get("https://api.spotify.com/v1/me/player", {
+    headers,
+  });
 
-
+export const getDevices = () =>
+axios.get("https://api.spotify.com/v1/me/player/devices", { headers });
 export const getUser = () =>
   axios.get("https://api.spotify.com/v1/me", { headers });
 
@@ -99,9 +107,12 @@ export const getFeaturePlaylist = () =>
   );
 
 export const getCategories = () =>
-  axios.get("https://api.spotify.com/v1/browse/categories?country=VN&limit=20&offset=0", {
-    headers,
-  });
+  axios.get(
+    "https://api.spotify.com/v1/browse/categories?country=VN&limit=20&offset=0",
+    {
+      headers,
+    }
+  );
 
 export const getPlaylists = () =>
   axios.get("https://api.spotify.com/v1/me/playlists", { headers });
@@ -150,7 +161,10 @@ export const getArtist = (artistId) =>
   axios.get(`https://api.spotify.com/v1/artists/${artistId}`, { headers });
 
 export const getArtistTopTrack = (artistId) =>
-  axios.get(`https://api.spotify.com/v1/artists/${artistId}/top-tracks?country=VN`, { headers });
+  axios.get(
+    `https://api.spotify.com/v1/artists/${artistId}/top-tracks?country=VN`,
+    { headers }
+  );
 
 export const followArtist = (artistId) => {
   const url = `https://api.spotify.com/v1/me/following?type=artist&ids=${artistId}`;

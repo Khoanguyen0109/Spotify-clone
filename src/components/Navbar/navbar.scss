@@ -181,12 +181,25 @@
 //  }
 
 // Medium devices (tablets, 768px and up)
-@media (min-width: 768px) and (max-width: 991.98px) { 
+@media screen and (min-width: 1201px) {
+  .nav-tools {
+    a {
+      &:hover,
+      &:focus,
+      &.active {
+        color: white;
+        background-color: #181818;
+        border-left: 5px solid #1ed760;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
   .nav {
     margin-top: 0;
     display: flex;
     flex-direction: row;
-    align-items: center;
     position: relative;
 
     height: 90px;
@@ -194,17 +207,12 @@
     .user {
       position: absolute;
       display: flex;
-      justify-content: center;
-      align-items: center;
-      top: 15%;
       right: 2%;
       &__info {
-        margin-right: 20px;
-        margin-bottom: 10px;
         display: flex;
         justify-content: center;
         align-items: center;
-
+        margin-right: 20px;
         &-avatar {
           width: 50px;
           height: 50px;
@@ -221,14 +229,35 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      a {
+        &:hover,
+        &:focus,
+        &.active {
+          border-bottom: 5px solid #1ed760;
+        }
+      }
     }
   }
- }
+}
 
-// Large devices (desktops, 992px and up)
+@media screen and (max-width: 740px) {
+  .nav {
+    .logo {
+      font-size: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-
-// Extra large devices (large desktops, 1200px and up)
-
-
-
+    .user {
+      &__info {
+        img {
+          margin-bottom: 15px;
+        }
+      }
+    }
+    .btn-logout {
+      display: none;
+    }
+  }
+}

@@ -1,7 +1,43 @@
-.player-control{
-    flex-grow: 6;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.player-control {
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
 
+  &__buttons {
+    width: 500px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .btn-prev,
+    .btn-next,
+    .btn-play,
+    .btn-random,
+    .btn-loop {
+      color: #ffffff7e;
+      margin-left: 20px;
+      margin-right: 20px;
+
+      &:hover {
+        color: white;
+        transform: scale(1.1, 1.1);
+      }
+    }
+    .btn-prev,
+    .btn-next {
+      font-size: 17px;
+    }
+    .btn-random,
+    .btn-loop{
+        font-size: 15px;
+    }
+  }
+  &__bar {
+   
+    width: 100%;
+    height: 100%;
+  }
 }

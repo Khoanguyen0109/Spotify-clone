@@ -1,3 +1,4 @@
+import { token } from "../api";
 
 
 export function getHashParams() {
@@ -23,3 +24,39 @@ export const formatDurationForHumans = millis => {
   const seconds = ((millis % 60000) / 1000).toFixed(0);
   return `${minutes} Mins ${seconds} Secs`;
 };
+
+
+export default function initSDK(token) {
+  const nameSDK = "Spotify React Client";
+  this.player = new window.Spotify.Player({
+    name: nameSDK,
+    getOAuthToken: cb => {
+      cb(token);
+    }
+  });
+
+  // import("./lazyInitSDK").then(res => {
+  //   res.default.bind(this)();
+  // });
+  this.player.addListener("ready", ({ device_id }) => {
+    console.log("Ready with Device ID", device_id);
+    this.setState({
+      SDKconnected: true,
+      deviceID: device_id,
+      deviceName: nameSDK,
+      player: this.player
+    });
+    return this.state.playerRequest("getDevices");
+  });
+
+  // Not Ready
+  this.player.addListener("not_ready", ({ device_id }) => {
+    console.error("Device ID has gone offline", device_id);
+    this.setState({ SDKconnected: false });
+  });
+
+  // Connect to the player!
+  this.player.connect().then(success => {
+    if (success) console.log("SDK connected, waiting for ready...");
+  });
+}

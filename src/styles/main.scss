@@ -18,9 +18,11 @@
     overflow-y: scroll;
   }
 
-  .music-control {
-    height: 90px;
-  }
+
+}
+.music-control {
+  height: 90px;
+  
 }
 
 
@@ -32,6 +34,17 @@
   background: transparent;
 }
 
+@media screen and (max-width: 1200px) {
+  .App {
+    display: flex;
+    flex-direction: column;
+
+    .navbar{
+      flex-basis: 20%;
+
+    }
+  }
+}
 
 
 @media screen and (max-width: 740px) {
@@ -48,4 +61,6 @@
 
 
 
-@media (max-width: 575.98px) { }
+@media (max-width: 575.98px) { 
+  
+}

@@ -25,6 +25,8 @@ function Navbar() {
     topTracks: null,
   });
 
+
+
   useEffect(() => {
     getData();
   }, []);
@@ -40,7 +42,14 @@ function Navbar() {
   }
   return (
     <div className="nav">
-      <div className="logo"> <Link to='/'><i class="fab fa-spotify"> <span> Spotify</span></i></Link>
+      <div className="logo">
+        {" "}
+        <Link to="/">
+          <i class="fab fa-spotify">
+            {" "}
+            <span> Spotify</span>
+          </i>
+        </Link>
       </div>
       {token ? (
         <div className="user">
